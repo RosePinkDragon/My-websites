@@ -1,0 +1,88 @@
+body, li, ul, a, p, h1, h2 nav{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+
+header{
+    background-color: #1e5454;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top:0;
+    left: 0;
+    
+}
+
+img {
+    max-width: 100%;
+}
+
+header h1{
+    color: #f4f4f4;
+}
+
+.banner{
+    position: relative;
+    left: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+.banner img{
+    max-width: 100%;
+}
+
+.banner .welcome{
+    position: absolute;
+    left: 0px;
+    top:15%;
+    background-color: #1E5454;
+    padding: 1em 30px;
+    color: #f4f4f4;
+}
+
+.banner h1 span{
+    font-size: 1.2em;
+}
+
+nav{
+    background-color: #B9C7A4;
+    padding: 15px;
+    position: sticky;
+    top: 67px;
+}
+
+nav ul{
+    white-space: nowrap;
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+nav li{
+    width: 25%;
+    display: inline-block;
+    font-size: 24px;
+    
+}
+
+nav li a{
+    color: #f4f4f4;
+}
+
+nav li a.othersite{
+    color: #3B978A;
+}
+
+main{
+    max-width: 100%;
+    width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+}
