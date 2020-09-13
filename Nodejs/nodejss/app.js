@@ -4,11 +4,16 @@ const app = express();
 //morgan
 const morgan = require('morgan');
 //importing blog
-const Blog = require('./models/blog');
+//const Blog = require('./models/blog');
+// we remove blog from here cause we import it from blogRoute
+
+//importing routes
+const blogRoutes= require('./routes/blogRoutes')
 
 
 //databse
-const  mongoose = require('mongoose')
+const  mongoose = require('mongoose');
+const { render } = require('ejs');
 const dbURI = 'mongodb+srv://netninja:Asdf1123@nodeninja.afwxy.mongodb.net/node-tuts?retryWrites=true&w=majority';
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -30,7 +35,9 @@ app.set('view engine', 'ejs');
 //app.listen(3000);
 
 //middleware & static files
-app.use(express.static('public'))
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+//you can pass in {extended:true} in urlencoded but is optional
 app.use(morgan('dev'));
 
 // mongoose and mongo sandbox routes
@@ -103,26 +110,11 @@ app.get('/about-us', (req,res) => {
 
 
 //blog routes
-app.get('/blogs', (req, res)=>{
-    Blog.find().sort({ createdAt: -1 })
-        .then((result) =>{
-            res.render('index', {
-                title: 'All Blogs',
-                blogs: result
-            })
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-})
-
-//create blog
-app.get('/blogs/create', (req, res) => {
-    res.render('create', {title: 'Create'});
-})
+//from here program goes to routes/blogRoutes.js
+app.use('/', blogRoutes)
 
 //404 page i.e error page
-//putting this line above will stop the code right thereby
+//putting this line above will stop the code right there and not proceed
 app.use((req, res) => {
     res.status(404).render('404', {title: 'Error'});
 });
