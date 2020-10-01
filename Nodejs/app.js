@@ -20,7 +20,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 //no semicolon here
 .then((result) => {
     console.log('connection successful')   
-    app.listen(3000);
+    app.listen(4000);
 })
 //no semicolon yet in the above line
 .catch((err) => console.log(err));
