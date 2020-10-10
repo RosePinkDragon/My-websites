@@ -25,7 +25,7 @@ function Header() {
                 {/* first link */}
                 {/* we use "Link" instead of "href" */}
                 {/* cause href refreshes the page */}
-                <Link className="header__link">
+                <Link to="/login" className="header__link">
                     <div className="header__option">
                         <span className="header__optionLineOne">Hello,</span>
                         <span className="header__optionLineTwo">Sign In</span>
