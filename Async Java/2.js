@@ -7,7 +7,9 @@ request.addEventListener("readystatechange", () => {
     //this checks if the response is 4.
     //if response is 4 then only it displays data
     //if you dont get it --> https://www.youtube.com/watch?v=aNDfsHQ5Gts
-  } else if (request.readyState === 4) {
+  } 
+  else if (request.readyState === 4) 
+  {
     console.log("could not fetch data");
   }
 });

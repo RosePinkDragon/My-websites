@@ -25,6 +25,8 @@ body, ul, li, h1, h2, a{
     border-radius: 36px;
   }
   .banner{
+    margin: 10%;
+    padding: 10%;
     position: relative;
   }
   .banner img{

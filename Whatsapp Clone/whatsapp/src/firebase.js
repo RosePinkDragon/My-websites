@@ -1,10 +1,9 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyAikb0DHXx16zQWtaVt2YZNlCmwT2TInME",
-    authDomain: "whatsapp-cad24.firebaseapp.com",
-    databaseURL: "https://whatsapp-cad24.firebaseio.com",
-    projectId: "whatsapp-cad24",
-    storageBucket: "whatsapp-cad24.appspot.com",
-    messagingSenderId: "893676254768",
-    appId: "1:893676254768:web:0f31464bf599adcbe41ff5",
-    measurementId: "G-3CPC5KNG2D"
+    apiKey: "AIzaSyAlItx4pFkEFOxQ0z-M6xS6nKSL24QiraE",
+    authDomain: "merntut-df977.firebaseapp.com",
+    databaseURL: "https://merntut-df977.firebaseio.com",
+    projectId: "merntut-df977",
+    storageBucket: "merntut-df977.appspot.com",
+    messagingSenderId: "199220113582",
+    appId: "1:199220113582:web:6f0d0b6929bda7366a7d3f"
   };
