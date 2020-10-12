@@ -11,8 +11,9 @@ function Header() {
             <Link to="/">
                 <img
                     className="header__logo"
-                    src="http://pngimg.com/uploads/amazon/amazon_PNG11.png">
-                </img>
+                    src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+                    alt="something you should see" />
+                
             </Link>
 
             {/* search box */}
