@@ -30,7 +30,7 @@
     background-repeat: repeat;
     background-position: center;
     padding: 30px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .chat__message{
@@ -78,6 +78,7 @@
     border-radius: 30px;
     padding: 10px;
     border: none;
+    outline-width: 0;
 }
 
 .chat__footer > form > button{
@@ -86,6 +87,6 @@
 
 .chat__footer > .MultiSvgIcon-root{
     padding: 10px;
-    margin: 10px;
+    margin: 100px;
     color: gray;
 }
