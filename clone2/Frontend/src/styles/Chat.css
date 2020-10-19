@@ -1,3 +1,26 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+   
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+
 .chat{
     display: flex;
     flex-direction: column;
@@ -86,7 +109,6 @@
 }
 
 .chat__footer > .MultiSvgIcon-root{
-    padding: 10px;
-    margin: 100px;
+    padding: 10px; 
     color: gray;
 }
