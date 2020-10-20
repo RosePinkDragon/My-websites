@@ -3,8 +3,8 @@
 // //     return 3.14* radius**2;
 // // };
 
-// //arrow fucbntions are new and better
-// //no parenthesis means empty brackets
+// arrow fucbntions are new and better
+// no parenthesis means empty brackets
 
 // //simplify 1
 // const calcArea = radius => {
