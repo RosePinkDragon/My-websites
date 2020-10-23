@@ -14,7 +14,7 @@ const blogRoutes= require('./routes/blogRoutes')
 //databse
 const  mongoose = require('mongoose');
 const { render } = require('ejs');
-const dbURI = 'mongodb+srv://netninja:Asdf1123@nodeninja.afwxy.mongodb.net/node-tuts?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://netninja:Asdf1123@nodeninja.afwxy.mongodb.net/chefs?retryWrites=true&w=majority';
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 //no semicolon here
