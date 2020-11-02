@@ -3,8 +3,18 @@ import "./styles/Header.css";
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { useStateValue } from './StateProvider';
+import { auth } from './Firebase';
 
 function Header() {
+    const [{ basket, user }] = useStateValue()
+    const login = () => {
+        if (user) {
+            auth.signOut();
+        }
+    }
+    
+    
     return (
         <nav className="header">
             {/* logo on left */}
@@ -26,10 +36,10 @@ function Header() {
                 {/* first link */}
                 {/* we use "Link" instead of "href" */}
                 {/* cause href refreshes the page */}
-                <Link to="/login" className="header__link">
-                    <div className="header__option">
-                        <span className="header__optionLineOne">Hello,</span>
-                        <span className="header__optionLineTwo">Sign In</span>
+                <Link to={!user && "/login"} className="header__link">
+                    <div onClick={login} className="header__option">
+                        <span className="header__optionLineOne">Hello, {user?.email}</span>
+                        <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
                     </div>
                 </Link>
                 {/* second */}
@@ -52,7 +62,9 @@ function Header() {
                         {/* shopping basket */}
                         <ShoppingBasketIcon />
                         {/* number of items */}
-                        <span className="header__optionLineTwo header__basketCount">0</span>
+                <span className="header__optionLineTwo header__basketCount">
+                    {basket?.length}
+                </span> 
                     </div>
                 </Link>
             </div>

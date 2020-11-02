@@ -1,9 +1,19 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyAlItx4pFkEFOxQ0z-M6xS6nKSL24QiraE",
-    authDomain: "merntut-df977.firebaseapp.com",
-    databaseURL: "https://merntut-df977.firebaseio.com",
-    projectId: "merntut-df977",
-    storageBucket: "merntut-df977.appspot.com",
-    messagingSenderId: "199220113582",
-    appId: "1:199220113582:web:6f0d0b6929bda7366a7d3f"
-  };
+import firebase from 'firebase'
+
+
+const firebaseApp = firebase.initializeApp({
+  apiKey: "AIzaSyBT-ES_5rUtKliM4oa-inVzLGznqG9nqGM",
+  authDomain: "amijan-clone.firebaseapp.com",
+  databaseURL: "https://amijan-clone.firebaseio.com",
+  projectId: "amijan-clone",
+  storageBucket: "amijan-clone.appspot.com",
+  messagingSenderId: "640582386606",
+  appId: "1:640582386606:web:c4babebef5fa655514be3f"
+})
+
+
+
+
+const auth =  firebase.auth()
+
+export { auth }
