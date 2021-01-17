@@ -1,37 +1,43 @@
-import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
+import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+
+import { Post } from './components/Post';
 
 import './App.css';
+import Pagination from './components/Pagination';
 
 function App() {
 
-  const [count, setCount] = useState(0);
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage] = useState(10)
 
-  const bill = (count) => {
-    let total = count;
-    if (total>0) {
-      return(
-        <p>Hello</p>
-      )
-    } else {
-      return(
-        <p>not hello</p>
-      )
+  useEffect(() => {
+    const fetchPosts = async() => {
+      setLoading(true)
+      const res = await axios.get('http://jsonplaceholder.typicode.com/posts');
+      setPosts(res.data)
+      setLoading(false)
     }
-}
+    fetchPosts();
+  }, [])
+
+  //getting posts
+  const indexOfLastPost = currentPage* postsPerPage
+  const indexOfFirstPost = indexOfLastPost-postsPerPage
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+
+  const paginate = (number) => setCurrentPage(number)
 
   return (
-    <div className="App" id="root">
-      <header className="App-header">
-        
-        <h1>Day of the week</h1>
-        <div>
-          <button onClick={() => setCount(count-1)}>Minus</button>
-            &nbsp; {count} &nbsp;
-          <button onClick={() => setCount(count+1)}>Plus</button>
-        </div>
-       {bill}
-      </header>
+    <div className="container mt-5">
+        {/* http://jsonplaceholder.typicode.com/posts */}
+       
+      <h1 className="text-primary mb-3">Posts</h1>
+      <Post loading={loading} post={currentPosts}/>
+      <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
     </div>
   );
 }
