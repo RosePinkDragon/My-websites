@@ -29,6 +29,7 @@ function App() {
   const indexOfFirstPost = indexOfLastPost-postsPerPage
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
 
+
   const paginate = (number) => setCurrentPage(number)
 
   return (

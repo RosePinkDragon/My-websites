@@ -15,11 +15,11 @@ export default function Pagination({ postsPerPage, totalPosts, paginate}) {
         {
           pageNumbers.map(number => (
             <li className="page-item" key={number}>
-              <a href="!#" 
+              <p 
               className="page-link"
               onClick={() => paginate(number)}>
                 {number}
-              </a>
+              </p>
             </li>
           ))
         }
