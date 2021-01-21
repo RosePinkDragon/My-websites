@@ -7,23 +7,18 @@ import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
 
 export default function ProductScreen(props) {
-
-
   const dispatch = useDispatch();
   const productId = props.match.params.id;
- 
-  const [qty, setQty] = useState(1)
+  const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
     dispatch(detailsProduct(productId));
   }, [dispatch, productId]);
-
   const addToCartHandler = () => {
-    props.history.push(`/cart/${productId}?qty=${qty}`)
-  }
-
+    props.history.push(`/cart/${productId}?qty=${qty}`);
+  };
   return (
     <div>
       {loading ? (
@@ -80,32 +75,37 @@ export default function ProductScreen(props) {
                       </div>
                     </div>
                   </li>
-                  {
-                    product.countInStock > 0 && (
-                      <>
-                        <li>
-                          <div className="row">
-                            <div>Qty</div>
-                            <div>
-                              <select value={qty} onChange={e=> setQty(e.target.value)}>
-                                {[...Array(product.countInStock).keys()].map(
+                  {product.countInStock > 0 && (
+                    <>
+                      <li>
+                        <div className="row">
+                          <div>Qty</div>
+                          <div>
+                            <select
+                              value={qty}
+                              onChange={(e) => setQty(e.target.value)}
+                            >
+                              {[...Array(product.countInStock).keys()].map(
                                 (x) => (
                                   <option key={x + 1} value={x + 1}>
                                     {x + 1}
                                   </option>
                                 )
                               )}
-                              </select>
-                            </div>
+                            </select>
                           </div>
-                        </li>
-                        <li>
-                          <button onClick={addToCartHandler} className="primary block">Add to Cart</button>
-                        </li>
-                      </>
-                    ) 
-                  }
-                  
+                        </div>
+                      </li>
+                      <li>
+                        <button
+                          onClick={addToCartHandler}
+                          className="primary block"
+                        >
+                          Add to Cart
+                        </button>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
             </div>
