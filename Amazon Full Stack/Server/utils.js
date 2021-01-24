@@ -8,7 +8,7 @@ export const generateToken = (user) => {
       email: user.email,
       isAdmin: user.isAdmin,
     },
-    process.env.JWT_SECRET || 'shhThisIsOurSecret',
+    process.env.JWT_SECRET || 'amazonssecrethere',
     {
       expiresIn: '30d',
     }

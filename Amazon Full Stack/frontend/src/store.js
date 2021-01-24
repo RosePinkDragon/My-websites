@@ -7,11 +7,11 @@ import { userRegisterReducer, userSigninReducer } from './reducers/userReducer';
 const initialState ={
     cart:{
         cartItems: localStorage.getItem('cartItems')? JSON.parse(localStorage.getItem('cartItems')) : [],
+        amazonShippingAddress: localStorage.getItem('amazonShippingAddress')? JSON.parse(localStorage.getItem('amazonShippingAddress')) : {},
+        amazonPaymentMethod: 'PayPal',
     },
     userSignin: {
-        userInfo: localStorage.getItem('amazonUserInfo')
-        ? JSON.parse(localStorage.getItem('amazonUserInfo'))
-        :null
+        userInfo: localStorage.getItem('amazonUserInfo')? JSON.parse(localStorage.getItem('amazonUserInfo')) :null
     },
     
 };
