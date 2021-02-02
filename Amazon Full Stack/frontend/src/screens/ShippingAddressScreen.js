@@ -10,8 +10,6 @@ export default function ShippingAddressScreen(props) {
 
   const cart = useSelector(state => state.cart)
   const { amazonShippingAddress } = cart;
-  console.log(cart)
-
 
   if(!userInfo){
     props.history.push('/signin')
