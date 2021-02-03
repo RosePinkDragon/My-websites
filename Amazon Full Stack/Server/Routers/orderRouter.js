@@ -5,6 +5,8 @@ import { isAuth } from '../utils.js';
 
 const orderRouter = express.Router();
 
+
+
 orderRouter.post('/',isAuth,expressAsyncHandler(async (req, res) => {
   console.log(req.body)
     if (req.body.orderItems.length === 0) {
@@ -26,6 +28,13 @@ orderRouter.post('/',isAuth,expressAsyncHandler(async (req, res) => {
       res.status(201).send({ message: 'New Order Created', order: createdOrder });
     }
   })
+);
+
+orderRouter.get('/mine',isAuth,expressAsyncHandler(async (req, res) => {
+  console.log(res)
+  const orders = await Order.find({ user: req.user._id });
+  res.send(orders);
+})
 );
 
 orderRouter.get(
