@@ -6,6 +6,7 @@ import { Post } from './components/Post';
 
 import './App.css';
 import Pagination from './components/Pagination';
+import Navbar from './Navbar';
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
   const paginate = (number) => setCurrentPage(number)
 
   return (
+    <>
+    <Navbar/>
     <div className="container mt-5">
         {/* http://jsonplaceholder.typicode.com/posts */}
        
@@ -40,6 +43,7 @@ function App() {
       <Post loading={loading} post={currentPosts}/>
       <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
     </div>
+    </>
   );
 }
 
