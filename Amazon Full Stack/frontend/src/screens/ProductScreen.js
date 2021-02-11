@@ -7,6 +7,9 @@ import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
 
 export default function ProductScreen(props) {
+
+  console.log(props)
+
   const dispatch = useDispatch();
   const productId = props.match.params.id;
   const [qty, setQty] = useState(1);
