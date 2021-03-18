@@ -9,17 +9,18 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 firebase.initializeApp({
-  apiKey: "AIzaSyCVtjqUweKo5uZq2t4DTSLA4i-sSM7y3LQ",
-  authDomain: "minreact-b5c27.firebaseapp.com",
-  databaseURL: "https://minreact-b5c27.firebaseio.com",
-  projectId: "minreact-b5c27",
-  storageBucket: "minreact-b5c27.appspot.com",
-  messagingSenderId: "57757906093",
-  appId: "1:57757906093:web:17c10074a81b164e704224"
+  apiKey: "AIzaSyDYg570M7WNJc3lrTzQLsSUdQSPLgfwm3w",
+  authDomain: "foodninjas-78572.firebaseapp.com",
+  projectId: "foodninjas-78572",
+  storageBucket: "foodninjas-78572.appspot.com",
+  messagingSenderId: "405053172606",
+  appId: "1:405053172606:web:b34d8153e7f91b63e7612f",
+  measurementId: "G-2ZL8LBTP4Z",
 })
 
 const auth = firebase.auth()
 const firestore = firebase.firestore();
+console.log(firestore)
 
 function App() {
 

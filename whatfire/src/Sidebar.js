@@ -1,4 +1,4 @@
-import { DonutLarge, SearchOutlined } from '@material-ui/icons'
+import { SearchOutlined } from '@material-ui/icons'
 import React from 'react'
 // import SidebarChat from 'SidebarChat'
 import "./styles/Sidebar.css"

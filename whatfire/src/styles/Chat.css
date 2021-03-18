@@ -52,18 +52,18 @@
     background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
     background-repeat: repeat;
     background-position: center;
-    padding: 30px;
-    overflow: auto;
+    padding: 10px;
+    overflow: scroll;
+    display: flex;
+    flex-flow: column;
 }
 
 .chat__message{
     position: relative;
     font-size: 16px;
-    padding: 10px;
     width: fit-content;
-    border-radius: 10px;
-    background: #ffffff;
-    margin-bottom: 30px;
+    width: fit-content;
+    border-radius: 5px;
 }
 
 .chat__timestamp{
@@ -71,16 +71,30 @@
     font-size: xx-small;
 }
 
-.chat__name{
-    position: absolute;
-    top: -20px;
-    font-weight: 500;
-    font-size: small;
+.chat{
+    margin: 10px 0;
 }
 
+
 .chat__reciever{
-    margin-left: auto;
+    align-self: flex-end;
+}
+
+.chat__reciever .text{
     background: #dcf8c6;
+    padding: 10px 15px;
+    border-radius: 10px 10px 0px 10px;
+}
+
+.chat__sender{
+    align-self: flex-start;
+}
+
+.chat__sender .text{
+    background: #000;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px 10px 10px 0px;
 }
 
 .chat__footer{
