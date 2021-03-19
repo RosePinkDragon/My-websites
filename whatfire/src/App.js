@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import './styles/App.css';
 import Chat from './Chat'
 import { SearchOutlined } from '@material-ui/icons'
@@ -8,34 +7,59 @@ import DonutLargeIcon from "@material-ui/icons/DonutLarge"
 import { Avatar, IconButton } from '@material-ui/core'
 import MoreVertIcon from "@material-ui/icons/MoreVert"
 import ChatIcon from "@material-ui/icons/Chat"
-import SidebarChat from './SidebarChat'
 
 import 'firebase/firestore'
-import firebase from 'firebase/app'
-import { useCollectionData } from 'react-firebase-hooks/firestore'
+
+import './styles/SidebarChat.css'
+
+
 import db from './firebase'
+
 
 function App() {
 
+    const [chatId, setChatId] = useState('')
+
+    
+
+   useEffect(() => {
+
+        const cafeList = document.querySelector('#cafe-list');
+        function renderCafe(doc){
+
+            setChatId(doc.id)
+            let sidebarChat = document.createElement('div');
+            sidebarChat.className = "sidebarChat";
+            
+            let sidebarChat__info = document.createElement('div');
+            sidebarChat__info.className = "sidebarChat__info";
 
 
+            let h2 = document.createElement('h2');
+    
+            sidebarChat.setAttribute('data-id', doc.id);
+            sidebarChat__info.textContent = doc.data().UserName;
+            h2.textContent = 'This is the last message';
+    
+            sidebarChat.appendChild(sidebarChat__info);
+            sidebarChat__info.appendChild(h2);
+    
+            cafeList.appendChild(sidebarChat);
+    
+            sidebarChat.addEventListener('click', (e) => {
+                e.stopPropagation();
+                setChatId(sidebarChat.getAttribute('data-id'))
+            });
 
-let users = []
+           
+        }
 
-  db.collection("messages").onSnapshot((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-    users.push({
-      id : doc.id,
-      name : doc.data().UserName
-    })
-  })
-})
-
-users.forEach((user) => {
-  console.log(user)
-})
-
-
+         db.collection('messages').get().then(snapshot => {
+                snapshot.docs.forEach(doc => {
+                    renderCafe(doc)
+                });
+            });
+    }, [])
 
 
   return (
@@ -63,13 +87,11 @@ users.forEach((user) => {
                     <input placeholder="Search or start new chat" type="text" />
                 </div>
             </div>
-            <div className="sidebar_chats">
-            </div>
-            
+            <div className="sidebar__chats" id="cafe-list"></div>
         </div>
 
         {/* Chat Component */}
-        <Chat />
+        <Chat chatId={chatId} />
       </div>
     </div>
   );
