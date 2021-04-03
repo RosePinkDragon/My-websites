@@ -2,7 +2,7 @@ import { Avatar, IconButton } from '@material-ui/core'
 import { AttachFile, InsertEmoticon, Mic, MoreVert, SearchOutlined } from '@material-ui/icons'
 import React, { useState } from 'react'
 import "./styles/Chat.css"
-import axios from "./axios"
+import instance from "./axios"
 
 function Chat({ messages }) {
 
@@ -11,7 +11,7 @@ function Chat({ messages }) {
     const sendMessage = async (e) => {
         e.preventDefault()
 
-        axios.post('/messages/new', {
+        instance.post('/messages/new', {
             message: input,
             name: "Demo Name",
             timestamp: "Just Now!",

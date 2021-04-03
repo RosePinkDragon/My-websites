@@ -3,13 +3,13 @@ import Pusher from 'pusher-js'
 import './styles/App.css';
 import Sidebar from './Sidebar'
 import Chat from './Chat'
-import axios from './axios'
+import instance from './axios'
 
 function App() {
   const [messages, setMessages] = useState([])
 
   useEffect(() => {
-    axios.get('/messages/sync')
+    instance.get('/messages/sync')
       .then(response => {
         setMessages(response.data)
       })
@@ -22,7 +22,6 @@ function App() {
 
     const channel = pusher.subscribe('messages');
     channel.bind('inserted', (newMessage) => {
-
       setMessages([...messages, newMessage])
     })
 
