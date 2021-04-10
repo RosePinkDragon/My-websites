@@ -12,10 +12,7 @@ import 'firebase/firestore'
 
 import './styles/SidebarChat.css'
 
-
 import db from './firebase'
-
-
 
 function App() {
 
