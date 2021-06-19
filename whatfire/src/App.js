@@ -23,6 +23,7 @@ function App() {
    useEffect(() => {
 
         const cafeList = document.querySelector('#cafe-list');
+        
         function renderCafe(doc){
 
             setChatId(doc.id)
@@ -31,7 +32,6 @@ function App() {
             
             let sidebarChat__info = document.createElement('div');
             sidebarChat__info.className = "sidebarChat__info";
-
 
             let h2 = document.createElement('h2');
     
@@ -48,7 +48,6 @@ function App() {
                 e.stopPropagation();
                 setChatId(sidebarChat.getAttribute('data-id'))
             });
-
            
         }
 
