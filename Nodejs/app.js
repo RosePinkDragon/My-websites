@@ -16,7 +16,6 @@ const blogRoutes = require("./routes/blogRoutes");
 const mongoose = require("mongoose");
 const { render } = require("ejs");
 const dbURI = process.env.MONGODB_URL;
-console.log(dbURI);
 
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
