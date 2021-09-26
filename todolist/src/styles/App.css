@@ -1,17 +1,11 @@
 .App {
-  
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
   background: whitesmoke;
 }
 
-.app_Form{
+.app_Form {
   /* margin-left: 10%; */
 }
-
-.app_Heading{
-  margin-left: 45px;
-}
-
-.form{
-  margin-left: 45px;
-}
-

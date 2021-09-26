@@ -9,7 +9,7 @@
 // //simplify 1
 // const calcArea = radius => {
 //      return 3.14 * radius**2;
-//      //for one parameter we dont use brackets 
+//      //for one parameter we dont use brackets
 //      //eg (radius) can be written as radius only
 //      //but while using more than one the brackets should be there
 // }
@@ -18,7 +18,6 @@
 // const calcArea2 = radius => 3.14* radius**2;
 // //this works for 1 line function only.
 
-
 // //you cant use arrow funtions with 'this' which we learn later on
 
 // const area = calcArea(5);
@@ -26,19 +25,18 @@
 
 // //practice
 
-
 //pract 2
 
 // const bill = function(products, tax)
 // {
-    
+
 //     let total = 0;
-    
+
 //     for( let i=0; i < products.length; i++)
 //     {
-        
+
 //         total += products[i] + products[i] * tax;
-        
+
 //     }
 //     return total;
 // }
@@ -50,7 +48,6 @@
 
 // console.log(add(3,2));
 
-
 // const bill = function(products, tax){
 //     let total = 0;
 //     for(let i=0; i < products.length; i++)
@@ -60,15 +57,15 @@
 //         return total;
 // };
 
-const bill = (products, tax) =>{
-    let total = 0;
-    for(let i=0; i < products.length; i++){
-        total =+ products[i] + products[i] * tax;
-    }
-    return total;
-}
+// const bill = (products, tax) =>{
+//     let total = 0;
+//     for(let i=0; i < products.length; i++){
+//         total =+ products[i] + products[i] * tax;
+//     }
+//     return total;
+// }
 
- console.log(bill([300,200,500], 0.7));
+//  console.log(bill([300,200,500], 0.7));
 
 // const bill = (products, tax) => {
 
@@ -78,3 +75,8 @@ const bill = (products, tax) =>{
 
 // const final = bill(products, 5);
 // console.log(final);
+
+const request = new XMLHttpRequest();
+
+request.open("GET", "http://jsonplaceholder.typicode.com/todos");
+request.send();

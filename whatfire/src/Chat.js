@@ -49,14 +49,13 @@ function Chat({chatId}) {
     const cross = document.getElementById("dlete")
 
     cross.addEventListener('click', (e) => {
-            db.collection('messages').doc(chatId).delete().then(() => {
-                console.log("Document successfully deleted!");
-                // eslint-disable-next-line react-hooks/exhaustive-deps
-                chatId = null
-            }).catch((error) => {
-                console.error("Error removing document: ", error);
-            });
-        
+        db.collection('messages').doc(chatId).delete().then(() => {
+            console.log("Document successfully deleted!");
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            chatId = null
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
     });
     
     messages && dummy.current.scrollIntoView({ behavior: 'smooth' });
